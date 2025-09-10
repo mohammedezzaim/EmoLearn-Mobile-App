@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:contentPadding="0dp">
+
+    <!-- Top colored status bar (changes color based on answer status) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="?attr/selectableItemBackground">
+
+        <!-- Status indicator bar -->
+        <View
+            android:id="@+id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            />
+
+        <!-- Main content container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Header with question number and status badge -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <!-- Question number with decorative bullet -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="#1976D2"
+                        android:shape="oval" />
+
+                    <TextView
+                        android:id="@+id/txtQuestionNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Question 1"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="#1976D2" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <!-- Status badge -->
+                <TextView
+                    android:id="@+id/txtStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Correct"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
+                    android:textColor="#FFFFFF"
+                    android:letterSpacing="0.02" />
+            </LinearLayout>
+
+            <!-- Question text -->
+            <TextView
+                android:id="@+id/txtQuestionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What is the capital of France?"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif"
+                android:textColor="#212121"
+                android:lineSpacingMultiplier="1.2"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Divider with subtle shadow -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Answers section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <!-- Your answer row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/imgYourAnswer"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="12dp"
+                        android:tint="#757575"
+                        android:contentDescription="Your answer" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Your answer"
+                            android:textSize="12sp"
+                            android:textColor="#9E9E9E"
+                            android:textAllCaps="true"
+                            android:letterSpacing="0.05" />
+
+                        <TextView
+                            android:id="@+id/txtSelectedAnswer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Paris"
+                            android:textSize="15sp"
+                            android:fontFamily="sans-serif"
+                            android:textColor="#424242"
+                            android:layout_marginTop="2dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Correct answer row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/imgCorrectAnswer"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="12dp"
+                        android:tint="#4CAF50"
+                        android:contentDescription="Correct answer" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Correct answer"
+                            android:textSize="12sp"
+                            android:textColor="#9E9E9E"
+                            android:textAllCaps="true"
+                            android:letterSpacing="0.05" />
+
+                        <TextView
+                            android:id="@+id/txtCorrectAnswer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Paris"
+                            android:textSize="15sp"
+                            android:fontFamily="sans-serif-medium"
+                            android:textColor="#4CAF50"
+                            android:layout_marginTop="2dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

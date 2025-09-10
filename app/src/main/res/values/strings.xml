@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">EmoLearn</string>
+    <string name="ia">IA</string>
+    <string name="dev">Dev</string>
+    <string name="history">History</string>
+    <string name="language">Language</string>
+    <string name="art">Art</string>
+    <string name="biology">Biology</string>
+    <string name="geography">Geography</string>
+    <string name="literature">Literature</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="generate_course">Generate Course</string>
+    <string name="tags">Tags:</string>
+    <string name="provide_a_brief_description_of_the_course">Provide a brief description of the course</string>
+    <string name="description">Description</string>
+    <string name="course_title">Course Title</string>
+    <string name="course_name">Course Name</string>
+    <string name="image_s_lectionn_e">Image sélectionnée</string>
+    <string name="previous">Previous</string>
+
+    <string name="openai_api_key">YOUR_OPENAI_API_KEY_HERE</string>
+
+    <string name="choose_image">Choose Image</string>
+    <string name="capture">Capture</string>
+    <string name="retake">Retake</string>
+    <string name="generate_content">Generate</string>
+    <string name="switch_camera">Switch camera</string>
+</resources>

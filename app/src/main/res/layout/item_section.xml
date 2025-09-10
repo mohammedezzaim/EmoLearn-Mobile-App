@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="1dp"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/black"
+            >
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/boook" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="0dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvSectionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Titre de la section"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#212121"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tvSectionOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ordre : 1"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="12dp" />
+
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnVoirContenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voir contenu"
+            android:textAllCaps="false"
+            android:backgroundTint="#FF7043"
+            android:textColor="#FFFFFF"
+            android:padding="8dp"
+            app:cornerRadius="8dp"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="proficiency_levels">
+        <item>Select Proficiency Level</item>
+        <item>Beginner</item>
+        <item>Intermediate</item>
+        <item>Advanced</item>
+    </string-array>
+
+    <string-array name="languages">
+        <item>Select Language</item>
+        <item>Arab</item>
+        <item>English</item>
+        <item>Spanish</item>
+        <item>French</item>
+        <item>German</item>
+    </string-array>
+</resources>

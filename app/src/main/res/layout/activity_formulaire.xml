@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layout_margin="5dp"
+    tools:context=".formulaire.FormulaireActivity">
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- ÉTAPE 1 : Informations du cours -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:clipToPadding="false"
+            android:scrollbarStyle="outsideOverlay">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/textViewCourseName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/course_name"
+                    android:textColor="@color/black"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutCourseTitle"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/course_title"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeColor="@color/orange"
+                    app:hintTextColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textViewCourseName">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextCourseTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:padding="16dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/textViewProficiencyLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Proficiency Level"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textInputLayoutCourseTitle" />
+
+                <Spinner
+                    android:id="@+id/spinnerProficiencyLevel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:backgroundTint="@color/orange"
+                    android:entries="@array/proficiency_levels"
+                    android:padding="12dp"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textViewProficiencyLevel" />
+
+                <TextView
+                    android:id="@+id/textViewLanguageLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Language"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/spinnerProficiencyLevel" />
+
+                <Spinner
+                    android:id="@+id/spinnerLanguage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:backgroundTint="@color/orange"
+                    android:entries="@array/languages"
+                    android:padding="12dp"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textViewLanguageLabel" />
+
+                <TextView
+                    android:id="@+id/textViewDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/description"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/spinnerLanguage" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutDescription"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/provide_a_brief_description_of_the_course"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeColor="@color/orange"
+                    app:hintTextColor="@color/black"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="500"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textViewDescription">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top|start"
+                        android:inputType="textMultiLine"
+                        android:minHeight="120dp"
+                        android:padding="16dp"
+                        android:textColor="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/textViewTags"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/tags"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutDescription" />
+
+                <TextView
+                    android:id="@+id/textViewTagsDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Select relevant tags for your course (multiple selection allowed)"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textViewTags" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupTags"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:chipSpacingHorizontal="8dp"
+                    app:chipSpacingVertical="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textViewTagsDescription">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/buttonTagIA"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ia"
+                        android:textColor="@color/black"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipStrokeColor="@color/orange"
+                        app:chipStrokeWidth="1dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/buttonTagDeV"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dev"
+                        android:textColor="@color/black"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipStrokeColor="@color/orange"
+                        app:chipStrokeWidth="1dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/buttonTagHistory"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/history"
+                        android:textColor="@color/black"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipStrokeColor="@color/orange"
+                        app:chipStrokeWidth="1dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/buttonTagArt"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/art"
+                        android:textColor="@color/black"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipStrokeColor="@color/orange"
+                        app:chipStrokeWidth="1dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/buttonTagLanguage"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/language"
+                        android:textColor="@color/black"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipStrokeColor="@color/orange"
+                        app:chipStrokeWidth="1dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/buttonTagBiology"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/biology"
+                        android:textColor="@color/black"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipStrokeColor="@color/orange"
+                        app:chipStrokeWidth="1dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/buttonTagGeography"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/geography"
+                        android:textColor="@color/black"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipStrokeColor="@color/orange"
+                        app:chipStrokeWidth="1dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/buttonTagLiterature"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/literature"
+                        android:textColor="@color/black"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipStrokeColor="@color/orange"
+                        app:chipStrokeWidth="1dp" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonNext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="24dp"
+                    android:backgroundTint="@color/orange"
+                    android:paddingHorizontal="24dp"
+                    android:paddingVertical="12dp"
+                    android:text="Suivant"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chipGroupTags" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <!-- ÉTAPE 2 : Capture d'image en temps réel - IMPROVED -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FF6F00">
+
+            <!-- Orange gradient overlay to match the image style -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFF7D3C" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:alpha="0.3" />
+
+            <!-- Texte d'instruction with improved styling -->
+            <TextView
+                android:id="@+id/textViewImageCapture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Capture Your Image"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:elevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewCaptureDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="32dp"
+                android:gravity="center"
+                android:text="Take a photo or select an image from your gallery"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:elevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewImageCapture" />
+
+            <!-- Improved Card View with shadows and styling -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewPreview"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="12dp"
+                app:layout_constraintDimensionRatio="3:4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewCaptureDescription"
+                app:layout_constraintWidth_percent="0.85">
+
+                <!-- Zone de prévisualisation caméra -->
+                <TextureView
+                    android:id="@+id/textureView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <!-- Image preview (après capture) -->
+                <ImageView
+                    android:id="@+id/imagePreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Enhanced Switch Camera Button - More visible now -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/switchCameraButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/switch_camera"
+                android:src="@drawable/switch_1"
+                app:borderWidth="0dp"
+                app:fabSize="normal"
+                app:elevation="8dp"
+                app:layout_constraintEnd_toEndOf="@id/cardViewPreview"
+                app:layout_constraintTop_toTopOf="@id/cardViewPreview"
+                app:tint="@color/orange" />
+
+            <!-- Enhanced Button Group with better spacing -->
+            <LinearLayout
+                android:id="@+id/buttonGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginHorizontal="24dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:elevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardViewPreview">
+
+                <!-- Enhanced Upload Button with clearer styling -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/uploadButton"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:text="@string/choose_image"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_menu_gallery"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="24dp"
+                    app:iconTint="@color/white"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="2dp" />
+
+                <!-- Enhanced Capture Button with matching styling -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/captureButton"
+                    style="@style/Widget.Material3.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="@string/capture"
+                    android:textColor="@color/orange"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_menu_camera"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="24dp"
+                    app:iconTint="@color/orange" />
+            </LinearLayout>
+
+            <!-- Enhanced Secondary Buttons (after capture) -->
+            <LinearLayout
+                android:id="@+id/secondaryButtonGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginHorizontal="24dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:elevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardViewPreview">
+
+                <!-- Enhanced Retake Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/retakeButton"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:text="@string/retake"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_menu_revert"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="24dp"
+                    app:iconTint="@color/white"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="2dp" />
+
+                <!-- Enhanced Generate Button with contrasting colors -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/generateButton"
+                    style="@style/Widget.Material3.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="@string/generate_content"
+                    android:textColor="@color/orange"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_menu_send"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="24dp"
+                    app:iconTint="@color/orange" />
+            </LinearLayout>
+
+            <!-- Enhanced Navigation buttons -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/navigationButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginBottom="32dp"
+                android:elevation="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <!-- Enhanced Previous Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonPrevious"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/previous"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:icon="@android:drawable/ic_media_previous"
+                    app:iconGravity="textStart"
+                    app:iconTint="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- Enhanced Progress indicator -->
+                <LinearLayout
+                    android:id="@+id/progressIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/circle_button_background" />
+
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="8dp"
+                        android:layout_margin="4dp"
+                        android:background="#FFFFFF" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ViewFlipper>
+</androidx.constraintlayout.widget.ConstraintLayout>

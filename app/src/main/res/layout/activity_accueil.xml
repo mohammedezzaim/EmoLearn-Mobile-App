@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homePage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_image"
+    android:padding="24dp">
+
+    <!-- Overlay pour améliorer la lisibilité -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#33000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Logo avec ombre portée -->
+
+    <!-- Titre avec ombre texte -->
+    <ImageView
+        android:id="@+id/logoApp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_background"
+        android:contentDescription="Logo de l'application"
+        android:elevation="8dp"
+        android:padding="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Phrase d'accroche stylisée -->
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="sans-serif-condensed"
+        android:shadowColor="#80000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        android:text="EmoLearn"
+        android:textColor="@android:color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoApp" />
+
+    <!-- Description avec animation de fond -->
+
+    <!-- Boutons modernisés -->
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/welcome_background"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:letterSpacing="0.04"
+        android:padding="12dp"
+        android:text="Bienvenue dans EmoLearn !"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appTitle" />
+
+    <TextView
+        android:id="@+id/appDescription"
+        android:layout_width="339dp"
+        android:layout_height="154dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/desc_background"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.25"
+        android:padding="24dp"
+        android:text="EmoLearn est une application intelligente qui adapte les cours en fonction de tes émotions. Grâce à une analyse émotionnelle, elle te propose des contenus pédagogiques personnalisés pour apprendre plus efficacement, à ton rythme et selon ton humeur."
+        android:textColor="@android:color/white"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcomeText" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.95"
+        android:layout_marginBottom="32dp">
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Connexion"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#FF6D00"
+            android:fontFamily="sans-serif-medium"
+            android:elevation="6dp"
+            android:stateListAnimator="@null"
+            android:paddingVertical="12dp"
+            android:letterSpacing="0.03"/>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Créer un compte"
+            android:textSize="18sp"
+            android:textColor="#FF6D00"
+            android:backgroundTint="@android:color/white"
+            android:fontFamily="sans-serif-medium"
+            android:elevation="6dp"
+            android:stateListAnimator="@null"
+            android:layout_marginTop="24dp"
+            android:paddingVertical="12dp"
+            android:letterSpacing="0.03"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

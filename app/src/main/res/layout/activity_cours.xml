@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    tools:context=".cours.CoursActivity">
+
+    <!-- Toolbar with orange background -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FF6D00"
+        android:elevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SmartLearn"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tvCourseCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12 leçons"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="16dp"
+                tools:text="12 leçons" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Search section with orange accents -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <EditText
+                android:id="@+id/searchEditText"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="Rechercher une leçon..."
+                android:textSize="16sp"
+                android:textColorHint="#9E9E9E"
+                android:textColor="#212121"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:background="@null"
+                android:importantForAutofill="no"
+                android:inputType="text" />
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="12dp"
+                android:src="@android:drawable/ic_menu_search"
+                android:contentDescription="Rechercher" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Filter chips - horizontal scrolling -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tous"
+                android:textColor="#212121"
+                android:checked="true"
+                app:chipBackgroundColor="#E0E0E0" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFavoris"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Favoris"
+                android:textColor="#212121"
+                app:chipBackgroundColor="#E0E0E0"
+                android:layout_marginStart="8dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipEnCours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="En cours"
+                android:textColor="#212121"
+                app:chipBackgroundColor="#E0E0E0"
+                android:layout_marginStart="8dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCompletes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complétés"
+                android:textColor="#212121"
+                app:chipBackgroundColor="#E0E0E0"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- List view container with improved styling -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="16dp">
+
+        <ListView
+            android:id="@+id/lessonsListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:scrollbarStyle="outsideOverlay" />
+
+        <TextView
+            android:id="@+id/emptyView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aucune leçon trouvée"
+            android:textSize="18sp"
+            android:textColor="#757575"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            tools:visibility="gone" />
+    </FrameLayout>
+
+    <!-- Improved bottom navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@android:color/white"
+        app:itemIconTint="#FF6D00"
+        app:itemTextColor="#FF6D00"
+        android:elevation="8dp" />
+
+</LinearLayout>
